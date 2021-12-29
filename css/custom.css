@@ -1,12 +1,156 @@
+:root {
+    --primary-color: #2BA7F3;
+    --white-color: #dfdfdf;
+    --dark-color: #12141A;
+    --secondary-dark-color: #262D37;
+    --third-dark-color: #303741;
+    --gray-color: #3b424c;
+    --gray-second-color: #484c55;
+}
+
+body {
+    color: var(--white-color);
+    background-color: var(--dark-color);
+    height: 100vh;
+    font-family: 'Sarabun', sans-serif;
+}
+
+body .material-icon {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 300;
+}
+
 h1, h2 {
     text-align: center;
 }
 
-#contenido {
-    margin-top: 40px;
+.button {
+    border: none;
+    border-radius: 25px;
+    height: 35px;
+    width: 120px;
+    color: var(--white-color);
+    letter-spacing: -1px;
+    font-weight: 700;
+    transition: transform .5s ease-in-out;
 }
-.borrar-tweet,
-.borrar-tweet:hover {
+
+.button:active {
+    transform: scale(0.6);
+}
+
+.button.button-primary {
+    background-color: var(--primary-color);
+}
+
+.container-principal {
+    background-color: var(--secondary-dark-color);
+    border-radius: 8px;
+    padding: 1rem 1.5rem 1.5rem 1.5rem;
+}
+
+.container-principal .header {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--third-dark-color);
+    margin-bottom: 2rem;
+    padding-bottom: .5rem;
+}
+
+.container-principal .header img {
+    width: 30px;
+    margin-right: .5rem;
+    margin-left: auto;
+}
+
+.container-principal .header h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: var(--white-color);
+    margin-right: auto;
+    font-weight: 300;
+}
+
+.container-form,
+.container-tweets {
+    border-radius: 8px;
+    background-color: var(--third-dark-color);
+    padding: .8rem;
+    box-shadow: 5px 5px 9px 0px rgb(0 0 0 / 5%);
+}
+
+.container-form form {
+    width: 100%;
+}
+
+.container-form .form-label {
+    font-size: .9rem;
+}
+
+.container-form textarea {
+    width: 100%;
+    height: 70px;
+    padding: .5rem;
+    font-size: .8rem;
+    color: var(--white-color);
+    box-sizing: border-box;
+    resize: none;
+    border-radius: 3px;
+    background-color: var(--gray-color);
+    border: none;
+    margin-top: .5rem;
+    margin-bottom: 1rem;
+}
+
+.container-form textarea:focus-within {
+    outline: none;
+}
+
+.container-form .button {
+    margin-left: auto;
+    display: block;
+}
+
+.container-tweets {
+    margin-top: 2rem;
+}
+
+.container-tweets .title {
+    margin: 0;
+}
+
+.container-tweets #lista-tweets {
+    margin-top: 1rem;
+    border-radius: 3px;
+    background-color: var(--gray-color);
+    padding: .5rem;
+}
+
+.container-tweets li {
+    list-style: none;
+    border-bottom: 1px solid var(--gray-second-color);
+    padding: .5rem .3rem .6rem .3rem;
+}
+
+.container-tweets li .borrar-tweet {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    width: 23px;
+    height: 23px;
+    text-align: center;
+    border-radius: 50%;
+    padding: .1rem;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.container-tweets li .borrar-tweet span {
+    margin: auto;
+}
+
+.borrar-tweet {
     float: right;
     cursor: pointer;
     color: red;
@@ -21,5 +165,5 @@ h1, h2 {
     font-weight: bold;
     max-width: 400px;
     margin: 0 auto;
-    color: white;
+    color: var(--white-color);
 }

@@ -66,7 +66,7 @@ function createHTML() {
 
             const btnDelete = document.createElement('a');
             btnDelete.classList.add('borrar-tweet');
-            btnDelete.textContent = 'X';
+            btnDelete.innerHTML = `<span class="material-icon material-icons-outlined">close</span>`;
 
             //Add function delete
             btnDelete.onclick = () => {
@@ -88,7 +88,7 @@ function createHTML() {
 
 function sincronizarStorage() {
     localStorage.setItem('tweets', JSON.stringify(arrayTweets));
-    console.log(arrayTweets);
+    // console.log(arrayTweets);
 }
 
 function deleteTweet(id) {
