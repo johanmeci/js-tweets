@@ -45,11 +45,10 @@ function addTweet(e) {
 
 function showError(error) {
     const msgError = document.createElement('p');
-    msgError.textContent = error;
+    msgError.innerHTML = `<span class='material-icon material-icons-outlined'>error_outline</span>${error}`;
     msgError.classList.add('error');
 
-    const content = document.querySelector('#contenido');
-    content.appendChild(msgError);
+    form.appendChild(msgError);
 
     setTimeout(() => {
         msgError.remove();

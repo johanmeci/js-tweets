@@ -7,6 +7,7 @@
     --gray-color: #3b424c;
     --gray-second-color: #484c55;
     --gray-text-color: #555e6a;
+    --red-color: #e44f4f;
 }
 
 body {
@@ -211,14 +212,24 @@ h1, h2 {
 }
 
 .error {
-    background-color: red;
+    margin: 1.5rem auto 0 auto;
+    border: 1px solid var(--red-color);
+    border-radius: 25px;
+    font-size: .8rem;
+    font-weight: 300;
     text-align: center;
-    padding: 10px;
-    text-transform: uppercase;
-    font-weight: bold;
-    max-width: 400px;
-    margin: 0 auto;
-    color: var(--white-color);
+    padding: .3rem 1.3rem .5rem 1.3rem;
+    width: max-content;
+    color: var(--red-color);
+    line-height: 1;
+    display: flex;
+    align-items: center;
+}
+
+.error .material-icon {
+    margin-right: .3rem;
+    position: relative;
+    top: 1px;
 }
 
 @media (min-width: 992px) {
