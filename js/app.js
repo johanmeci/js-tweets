@@ -62,19 +62,32 @@ function createHTML() {
 
     if (arrayTweets.length > 0) {
 
-        arrayTweets.forEach(tweet => {
+        arrayTweets.forEach(tw => {
+
+            const { tweet, id } = tw;
+            const txtDate = new Date(id);
 
             const btnDelete = document.createElement('a');
             btnDelete.classList.add('borrar-tweet');
-            btnDelete.innerHTML = `<span class="material-icon material-icons-outlined">close</span>`;
+            btnDelete.innerHTML = `<span class='material-icon material-icons-outlined'>close</span>`;
 
             //Add function delete
             btnDelete.onclick = () => {
-                deleteTweet(tweet.id);
+                deleteTweet(id);
             }
 
             const li = document.createElement('li');
-            li.innerText = tweet.tweet;
+            li.innerHTML = `
+            <p class='username'>
+                <span class='span-name'>Jon Smith</span>
+                <span class="material-icon material-icons-outlined">verified</span>
+                <span class='span-user'>@jonsmith</span>
+            </p>
+            <p class='tweet'>${tweet}</p>
+            <span class='span-date'>
+                <span class='material-icon material-icons-outlined'>schedule</span>
+                ${txtDate.toLocaleDateString()}
+            </span>`;
             li.appendChild(btnDelete);
 
             listTweets.appendChild(li);
